@@ -1,0 +1,471 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffd6e0, #ffefd6, #d6f0ff, #e9d6ff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* keeps spacing nice on small screens */
+  padding: 20px;
+}
+
+
+.hero-title {
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 7rem;
+  color: #000000;
+  text-shadow: 0 0 10px #fff, 0 0 20px rgba(255, 255, 255, 0.8);
+  transform: translateY(-40px);
+  margin-bottom: 24px;
+}
+
+.card.glass-card {
+  width: 350px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card.glass-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+.input-field {
+  width: 100%;             /* full width of card */
+  padding: 14px 20px;      /* taller and roomy */
+  margin: 8px 0;           /* spacing between inputs */
+  border-radius: 50px;     /* rounded, pill shape */
+  border: 1px solid #ccc;  /* soft border */
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.9); /* subtle glass effect */
+}
+
+.input-field:focus {
+  border-color: #2563eb;   /* blue border on focus */
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.3);
+}
+
+/* Login & Google Buttons Container */
+.login-form .submit-btn {
+  width: 100%;
+  max-width: 300px; /* control button width */
+  margin: 10px 0;   /* spacing between buttons */
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: none;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+/* Google Button */
+.google-btn {
+  display: flex;           /* inline icon + text */
+  align-items: center;     /* vertically center */
+  justify-content: center; /* center content horizontally */
+  gap: 12px;               /* space between icon and text */
+  background: #4285F4;     /* Google blue */
+  color: #fff;
+}
+
+.google-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(66, 133, 244, 0.4);
+}
+
+/* Google Icon */
+.google {
+  width: 20px;
+  height: 20px;
+}
+
+/* Remove any default gray boxes behind button/icon */
+.google-btn img {
+  background: transparent;
+}
+
+/* Optional: center the buttons nicely inside the card */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.switch-text {
+  display: block;
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.switch-btn {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body, .home-wrapper {
+  font-family: "Inter", system-ui, sans-serif;
+  color: #111827;
+
+  /* subtle pastel pink gradient (almost white) */
+  background: linear-gradient(
+    135deg,
+    #fff1f5 0%,    /* very soft pink top */
+    #fdf7ff 50%,   /* almost white middle */
+    #f9fbff 100%   /* pale white/pink bottom */
+  );
+
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* NAVBAR */
+.navbar {
+  position: relative; /* instead of sticky */
+  top: auto;          /* reset sticky top */
+  z-index: 100;
+  padding: 1.2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 244, 250, 0.95); /* soft pink overlay */
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.nav-logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.nav-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  outline: none;
+  background: #2563eb;
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* HERO */
+.hero {
+  padding: 4.5rem 6rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr; /* left bigger than right */
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-left {
+  display: flex;
+  justify-content: flex-start; /* keeps slider to left */
+}
+
+.slider-card {
+  width: 520px;
+  height: 330px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+}
+
+.slider-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fact-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 18px 22px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* HERO RIGHT */
+.hero-right h1 {
+  font-size: 4rem; /* big heading */
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.hero-right span {
+  color: #2563eb;
+}
+
+.hero-right p {
+  max-width: 520px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4b5563;
+}
+
+/* SECTIONS */
+.info-section {
+  padding: 4rem 6rem;
+  max-width: 1100px;
+  margin: auto;
+  text-align: left; /* keeps content aligned left */
+}
+
+.info-section.soft {
+  background: #fdf7ff; /* slightly lighter pink for alternate sections */
+  border-radius: 24px;
+}
+
+.info-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.info-section p,
+.info-section li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.info-section ul {
+  padding-left: 1.2rem;
+}
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-btn {
+  margin-top: 2rem;
+  padding: 14px 34px;
+  border-radius: 999px;
+  border: none;
+  background: #2563eb; /* solid blue */
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4); /* blue shadow */
+}
+.profile-dropdown-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-icon {
+  color: #2563eb; /* blue icon */
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+  z-index: 50;
+}
+
+.profile-email {
+  padding: 8px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-btn {
+  padding: 8px 16px;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-btn:hover {
+  background: #f0f0f0;
+}
+
+.dropdown-btn.logout,
+.dropdown-btn.delete {
+  color: #e53935; /* red */
+}
+/* Keep this in auth.css */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* CENTER everything inside form */
+  gap: 10px;           /* optional spacing */
+}
+
+/* Make submit & Google buttons same width and centered */
+.submit-btn {
+  width: 100%;        /* full width of parent form/card */
+  max-width: 300px;   /* cap width like login page */
+}
+
+/* Google button */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #4285F4;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.google-btn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(66, 133, 244, 0.4);
+}
+
+/* Icon inside Google button */
+.google-btn img.google {
+  width: 20px;
+  height: 20px;
+  background: transparent;
+}
+.swap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.swap-card {
+  background: #fdf7ff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.footer {
+  background: #2563eb; /* deep blue */
+  color: #fff;
+  padding: 40px 0 20px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section h3, .footer-section h4 {
+  margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section ul, .footer-section li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #dbeafe;
+}
+

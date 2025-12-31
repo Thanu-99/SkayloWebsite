@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global font + background only */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8fafc; /* soft neutral */
+}
+
