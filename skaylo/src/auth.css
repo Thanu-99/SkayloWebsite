@@ -468,4 +468,29 @@ body, .home-wrapper {
   font-size: 0.9rem;
   color: #dbeafe;
 }
+/* profile-dropdown.css or in your auth.css */
+.profile-dropdown {
+  display: flex;
+  align-items: center; /* vertically center */
+  gap: 10px; /* space between avatar/icon and text */
+  padding: 8px 12px;
+  background-color: white; /* or your card color */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  min-width: 200px; /* adjust as needed */
+}
+
+.profile-dropdown img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* make circular */
+  object-fit: cover;
+}
+
+.profile-dropdown .email {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  word-break: break-all; /* avoids breaking layout if email is long */
+}
 
