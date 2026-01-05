@@ -493,4 +493,79 @@ body, .home-wrapper {
   color: #333;
   word-break: break-all; /* avoids breaking layout if email is long */
 }
+/* ---------------- MOBILE RESPONSIVE FIXES ---------------- */
+@media (max-width: 768px) {
+  /* Hero section stacking */
+  .hero {
+    flex-direction: column !important;
+    padding: 20px 10px;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .hero-left .slider-card img {
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .hero-right h1 {
+    font-size: 1.8rem; /* smaller heading on mobile */
+  }
+
+  .hero-right span {
+    display: block;
+    font-size: 1.5rem;
+    margin-top: 5px;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 0 5px;
+  }
+
+  .hero-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  /* Navbar links stacking */
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  /* Footer spacing */
+  .footer-container {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .swap-grid {
+    grid-template-columns: 1fr !important; /* single column swap cards */
+    gap: 10px;
+  }
+
+  .info-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .info-section p,
+  .info-section ul li {
+    font-size: 0.95rem;
+  }
+}
 
