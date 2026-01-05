@@ -1,6 +1,7 @@
 // src/pages/Scan.js
 import React, { useState } from "react";
 import "../scan.css"; // 👈 NEW CSS FILE (frontend only)
+import { API_URL } from "../config";
 
 const Scan = () => {
   const [productName, setProductName] = useState("");
@@ -14,7 +15,8 @@ const Scan = () => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/product/${encodeURIComponent(productName)}`
+        `${API_URL}/product/${encodeURIComponent(productName)}`
+
       );
 
       if (!res.ok) {

@@ -9,6 +9,7 @@ import {
 import { auth } from "../firebase";
 import googleIcon from "../assets/google.png";
 import "../auth.css";
+import { API_URL } from "../config";
 
 function Login() {
   const navigate = useNavigate();

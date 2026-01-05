@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } f
 import { auth } from "../firebase";
 import googleIcon from "../assets/google.png"; // your Google icon
 import "../auth.css"; // keep existing styling
+import { API_URL } from "../config";
 
 function Register() {
   const navigate = useNavigate();
@@ -28,11 +29,12 @@ function Register() {
       setLoading(true);
 
       // Backend registration
-      const res = await fetch("http://localhost:5000/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password })
-      });
+      const res = await fetch(`${API_URL}/register`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+});
+
       const data = await res.json();
       if (res.ok) {
         alert(data.message);
