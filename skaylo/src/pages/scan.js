@@ -6,30 +6,31 @@ const Scan = () => {
   const [productName, setProductName] = useState("");
   const [productInfo, setProductInfo] = useState(null);
 
-  const scanProduct = async () => {
-    if (!productName) {
-      alert("Enter a product name");
+ const scanProduct = async () => {
+  if (!productName) {
+    alert("Enter a product name");
+    return;
+  }
+
+  try {
+    const res = await fetch(
+      `http://localhost:5000/product/name/${encodeURIComponent(productName)}`
+    ); // ✅ only one closing parenthesis here
+
+    if (!res.ok) {
+      setProductInfo(null);
+      alert("Product not found");
       return;
     }
 
-    try {
-      const res = await fetch(
-        `http://localhost:5000/product/${encodeURIComponent(productName)}`
-      );
+    const data = await res.json();
+    setProductInfo(data);
+  } catch (err) {
+    console.error(err);
+    alert("Error contacting server");
+  }
+};
 
-      if (!res.ok) {
-        setProductInfo(null);
-        alert("Product not found");
-        return;
-      }
-
-      const data = await res.json();
-      setProductInfo(data);
-    } catch (err) {
-      console.error(err);
-      alert("Error contacting server");
-    }
-  };
 
   return (
     <div className="scan-page">

@@ -346,7 +346,14 @@ body, .home-wrapper {
   font-size: 0.95rem;
   color: #333;
   border-bottom: 1px solid #eee;
+
+  width: 100%;       /* make it fill the card width */
+  box-sizing: border-box; /* include padding inside width */
+  white-space: nowrap;    /* keep text on single line */
+  overflow: hidden;       /* clip overflow */
+  text-overflow: ellipsis; /* add … if too long */
 }
+
 
 .dropdown-btn {
   padding: 8px 16px;
